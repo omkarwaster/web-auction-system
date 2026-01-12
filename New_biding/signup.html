@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up | Web Auction System</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+    html, body {
+      height: 100%;
+    }
+    body {
+      background: url('buyerimagebg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      transition: background-image 0.6s ease;
+      padding: 0 5%;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.96);
+      padding: 30px;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 340px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+      transition: all 0.6s ease;
+    }
+    .container.left-align {
+      margin-right: auto;
+      margin-left: 0;
+    }
+    .container.right-align {
+      margin-left: auto;
+      margin-right: 0;
+    }
+    .container h2 {
+      margin-bottom: 20px;
+      color: #2c3e50;
+      text-align: center;
+    }
+    .form-group {
+      margin-bottom: 18px;
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 500;
+      color: #333;
+    }
+    input[type="text"], input[type="email"], input[type="password"], input[type="file"] {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      background: #fefefe;
+      font-size: 15px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 500;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background-color: #005fa3;
+    }
+    .role-switch {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 24px;
+    }
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+      border-radius: 24px;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+    input:checked + .slider {
+      background-color: #0077cc;
+    }
+    input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+    .role-label {
+      font-size: 14px;
+      font-weight: 500;
+      color: #555;
+    }
+    @media screen and (max-width: 768px) {
+      body {
+        justify-content: center;
+        padding: 0 20px;
+      }
+      .container {
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+<body id="pageBg">
+
+  <div class="container right-align" id="formBox">
+    <div class="role-switch">
+      <span class="role-label">Personal</span>
+      <label class="switch">
+        <input type="checkbox" id="roleToggle" onchange="toggleRole()">
+        <span class="slider"></span>
+      </label>
+      <span class="role-label">Business</span>
+    </div>
+    <h2 id="formTitle">Personal Account Sign Up</h2>
+    <form id="signupForm" action="signup.php" method="POST" enctype="multipart/form-data">
+      <input type="hidden" name="accountType" id="accountType" value="personal" />
+      <div class="form-group" id="field1">
+        <label for="name">Full Name</label>
+        <input type="text" name="name" id="name" placeholder="Enter full name" required>
+      </div>
+      <div class="form-group" id="field2">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="Enter email" required>
+      </div>
+      <div class="form-group" id="field3">
+        <label for="file">Legal Identification</label>
+        <input type="file" name="file" id="file" accept="image/*" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" placeholder="Create password" required>
+      </div>
+      <button type="submit">Sign Up</button>
+    </form>
+    <p style="text-align:center; margin-top: 12px;">
+      Already have an account? <a href="login.html">Log in</a><br>
+      <a href="index.php">Go Back Home</a>
+    </p>
+  </div>
+
+  <script>
+    const buyerBg = "buyerimagebg.jpg";
+    const sellerBg = "sellerimagebg.jpg";
+
+    function toggleRole() {
+      const isBusiness = document.getElementById("roleToggle").checked;
+      const title = document.getElementById("formTitle");
+      const pageBg = document.getElementById("pageBg");
+      const formBox = document.getElementById("formBox");
+      const field1 = document.getElementById("field1");
+      const field2 = document.getElementById("field2");
+      const field3 = document.getElementById("field3");
+      const accountTypeInput = document.getElementById("accountType");
+
+      if (isBusiness) {
+        title.textContent = "Business Account Sign Up";
+        pageBg.style.backgroundImage = `url('${sellerBg}')`;
+        formBox.classList.remove("right-align");
+        formBox.classList.add("left-align");
+        field1.innerHTML = `<label for="name">Business Name</label><input type="text" name="name" id="name" placeholder="Enter business name" required>`;
+        field2.innerHTML = `<label for="email">Company Email</label><input type="email" name="email" id="email" placeholder="Enter business email" required>`;
+        field3.innerHTML = `<label for="file">Upload Business License</label><input type="file" name="file" id="file" accept="application/pdf,image/*" required>`;
+        accountTypeInput.value = "business";
+      } else {
+        title.textContent = "Personal Account Sign Up";
+        pageBg.style.backgroundImage = `url('${buyerBg}')`;
+        formBox.classList.remove("left-align");
+        formBox.classList.add("right-align");
+        field1.innerHTML = `<label for="name">Full Name</label><input type="text" name="name" id="name" placeholder="Enter full name" required>`;
+        field2.innerHTML = `<label for="email">Email</label><input type="email" name="email" id="email" placeholder="Enter email" required>`;
+        field3.innerHTML = `<label for="file">Legal Identification</label><input type="file" name="file" id="file" accept="image/*" required>`;
+        accountTypeInput.value = "personal";
+      }
+    }
+
+    toggleRole();
+  </script>
+
+</body>
+</html>

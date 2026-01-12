@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Auction System</title>
+  <style>
+    /* Reset & fonts */
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background: #e6f0ff; color: #333; min-height: 100vh; display: flex; flex-direction: column; }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #007bff, #0056b3);
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    header h1 { font-size: 48px; margin-bottom: 10px; }
+    header p { font-size: 20px; font-weight: 500; }
+
+    /* Main content */
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 1000px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      padding: 40px;
+      line-height: 1.8;
+    }
+
+    /* Section titles */
+    h2 {
+      color: #0056b3;
+      font-size: 32px;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+    p { font-size: 18px; margin-bottom: 20px; }
+
+    /* Contact list styling */
+    ul {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+    ul li {
+      margin: 10px 0;
+      font-size: 18px;
+    }
+    .email {
+      color: #007bff;
+      text-decoration: none;
+    }
+    .email:hover {
+      text-decoration: underline;
+    }
+
+    /* Contact form */
+    form {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    input, textarea {
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      width: 100%;
+    }
+    button {
+      background: #0056b3;
+      color: white;
+      padding: 14px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #003d82;
+    }
+
+    /* Footer */
+    footer {
+      background: #0056b3;
+      color: white;
+      text-align: center;
+      padding: 25px 20px;
+      font-size: 16px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header h1 { font-size: 36px; }
+      header p { font-size: 16px; }
+      .container { padding: 30px; }
+      h2 { font-size: 28px; }
+      p, ul li { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Contact Auction System</h1>
+    <p>We’re here to help – reach out to our team anytime</p>
+  </header>
+
+  <main>
+    <div class="container">
+      <h2>Get in Touch</h2>
+      <p>
+        Have a question about our Web Auction System, need assistance with your account, 
+        or want to provide feedback? Our dedicated administrators are here to support you. 
+      </p>
+
+      <h2>Administrator Contacts</h2>
+      <ul>
+        <li><b>Omkar Waster</b> – <a href="mailto:omkarwaster123@gmail.com" class="email">omkarwaster123@gmail.com</a></li>
+        <li><b>Sushant Yadav</b> – <a href="mailto:yadavsushant321@gmail.com" class="email">yadavsushant321@gmail.com</a></li>
+        <li><b>Nitin Kumar Singh</b> – <a href="mailto:nitinkumarsingh549@gmail.com" class="email">nitinkumarsingh549@gmail.com</a></li>
+      </ul>
+
+      <h2>Contact Form</h2>
+      <p>Send us your queries or suggestions directly through this form:</p>
+      <form>
+        <input type="text" name="name" placeholder="Your Full Name" required>
+        <input type="email" name="email" placeholder="Your Email Address" required>
+        <textarea name="message" rows="6" placeholder="Type your message here..." required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <a href="index.php" class="button">Go Back to Home</a>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer>
+    &copy; 2025 Auction System | All Rights Reserved
+  </footer>
+
+</body>
+</html>

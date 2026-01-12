@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Auction System</title>
+  <style>
+    /* Reset & fonts */
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background: #e6f0ff; color: #333; min-height: 100vh; display: flex; flex-direction: column; }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #007bff, #0056b3);
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    header h1 { font-size: 48px; margin-bottom: 10px; }
+    header p { font-size: 20px; font-weight: 500; }
+
+    /* Main content */
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 1000px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      padding: 40px;
+      line-height: 1.8;
+    }
+
+    /* Section titles */
+    h2 {
+      color: #0056b3;
+      font-size: 32px;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+    p { font-size: 18px; margin-bottom: 20px; }
+
+    /* List styling */
+    ul {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+    ul li {
+      margin: 10px 0;
+      font-size: 18px;
+    }
+
+    /* Footer */
+    footer {
+      background: #0056b3;
+      color: white;
+      text-align: center;
+      padding: 25px 20px;
+      font-size: 16px;
+    }
+
+    /* Back button */
+    .back-home {
+      display: block;
+      margin: 30px auto 0 auto;
+      width: fit-content;
+      background: #007bff;
+      color: white;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+    .back-home:hover {
+      background: #0056b3;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header h1 { font-size: 36px; }
+      header p { font-size: 16px; }
+      .container { padding: 30px; }
+      h2 { font-size: 28px; }
+      p, ul li { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>About WebAuction System</h1>
+    <p>Your trusted digital marketplace for buying and selling with confidence</p>
+  </header>
+
+  <main>
+    <div class="container">
+      <h2>Who We Are</h2>
+      <p>
+        Auction System is a modern online platform connecting buyers and sellers in a secure, transparent environment. 
+        Whether you want to sell rare collectibles, luxury products, or everyday items, our system ensures a smooth and efficient auction experience.
+      </p>
+
+      <h2>Our Mission</h2>
+      <p>
+        We aim to build a reliable marketplace where users can confidently sell and purchase items. 
+        Our mission is to combine <b>technology, security, and trust</b> to create the ultimate auction platform.
+      </p>
+
+      <h2>Our Vision</h2>
+      <p>
+        To become the leading online auction platform that empowers users to monetize their items easily while offering buyers the best deals in real-time.
+      </p>
+
+      <h2>Why Choose Us?</h2>
+      <ul>
+        <li> Intuitive and easy-to-use interface</li>
+        <li> Real-time bidding updates</li>
+        <li> Detailed analytics & dashboards for sellers</li>
+        <li> Responsive support team to resolve queries quickly</li>
+      </ul>
+
+      <h2>Our Values</h2>
+      <p>
+        <b>Transparency:</b> Every bid and transaction is visible to ensure trust.<br>
+        <b>Innovation:</b> Constantly improving platform features for a better user experience.<br>
+        <b>Customer Focus:</b> Our platform is designed with the users in mind, both buyers and sellers.
+      </p>
+
+      <!--  Back to home button -->
+      <a href="index.php" class="back-home">⬅ Back to Home Page</a>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Auction System | All Rights Reserved
+  </footer>
+
+</body>
+</html>
